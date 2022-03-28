@@ -16,16 +16,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class fr4 extends Fragment {
     Button rqCamera;
     private ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
-                    Log.d("isGranted", "granted");
+                    Toast.makeText(getActivity(), "Granted", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Log.d("isGranted", "denied");
+                    Toast.makeText(getActivity(), "Denied", Toast.LENGTH_SHORT).show();
                 }
             });
     @Override
@@ -39,13 +40,10 @@ public class fr4 extends Fragment {
                 if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
                     return;
                 else {
-                    if (ContextCompat.checkSelfPermission(
-                            getActivity(), Manifest.permission.CAMERA) ==
-                            PackageManager.PERMISSION_GRANTED) {
-                        Log.d("isGranted", "granted");
-
+                    if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(getActivity(), "Granted", Toast.LENGTH_SHORT).show();
                     } else if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                        Log.d("isGranted", "shouldShowRequestPermissionRationale");
+                        Toast.makeText(getActivity(), "shouldShowRequestPermissionRationale", Toast.LENGTH_SHORT).show();
                         requestPermissionLauncher.launch(Manifest.permission.CAMERA);
                     }else {
                         requestPermissionLauncher.launch(

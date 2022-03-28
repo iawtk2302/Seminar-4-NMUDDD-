@@ -24,10 +24,11 @@ public class fr3 extends Fragment {
     private ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
-                    Log.d("isGranted", "granted");
+                    Toast.makeText(getActivity(), "Granted", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Log.d("isGranted", "denied");
+                    Toast.makeText(getActivity(), "Denied", Toast.LENGTH_SHORT).show();
+
                 }
             });
     @Override
@@ -45,10 +46,10 @@ public class fr3 extends Fragment {
                     if (ContextCompat.checkSelfPermission(
                             getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) ==
                             PackageManager.PERMISSION_GRANTED) {
-                        Log.d("isGranted", "granted");
+                        Toast.makeText(getActivity(), "Granted", Toast.LENGTH_SHORT).show();
 
                     } else if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                        Log.d("isGranted", "shouldShowRequestPermissionRationale");
+                        Toast.makeText(getActivity(), "shouldShowRequestPermissionRationale", Toast.LENGTH_SHORT).show();
                         requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION);
                     }else {
                         requestPermissionLauncher.launch(
