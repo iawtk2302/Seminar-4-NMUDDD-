@@ -10,6 +10,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+        android:text="Hello fragment 2" />
+    <Button
+        android:id="@+id/rqCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:text="request Camera permission"/>
 </FrameLayout>
