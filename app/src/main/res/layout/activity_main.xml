@@ -20,7 +20,7 @@
         android:name="com.example.learnfragment2.fr2"/>
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:name="com.example.learnfragment2.fr3"
         android:id="@+id/fragment_layout2"/>
     <LinearLayout
