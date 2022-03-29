@@ -26,10 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fragmentManager=getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_layout2,fr3.class,null)
-                        .commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout2,fr3.class,null).commit();
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {

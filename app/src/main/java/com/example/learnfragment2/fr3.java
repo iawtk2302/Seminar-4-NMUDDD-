@@ -57,7 +57,6 @@ public class fr3 extends Fragment {
                 }
             }
         });
-
         return v;
     }
 
