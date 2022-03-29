@@ -13,11 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link fr1#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class fr1 extends Fragment {
 
     private MyViewModel viewModel;
